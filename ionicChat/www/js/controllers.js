@@ -4,7 +4,7 @@ angular.module('starter.controllers', [])
 .controller('ChatsCtrl', function($rootScope, $scope, Chats) {
     $scope.chats = []
 
-    var exampleSocket = new WebSocket("ws://localhost:8765/");
+    var exampleSocket = new WebSocket("ws://192.168.10.145:8765/");
     exampleSocket.onopen = function (event) {
 
         console.log("socket open")
