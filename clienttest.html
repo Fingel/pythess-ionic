@@ -1,0 +1,16 @@
+<!doctype html>
+<html>
+    <head><title>Websocket test</title></head>
+    <body>
+        <h1>Websocket test</h1>
+    </body>
+    <script type="text/javascript">
+        var exampleSocket = new WebSocket("ws://localhost:8765/");
+        exampleSocket.onopen = function (event) {
+            exampleSocket.send(JSON.stringify({"name": "Austin"}));
+        };
+        exampleSocket.onmessage = function (event) {
+            console.log(JSON.parse(event.data));
+        }
+    </script>
+</html>
