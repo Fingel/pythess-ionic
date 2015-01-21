@@ -10,15 +10,15 @@ angular.module('starter.controllers', [])
         console.log("socket open")
     };
     exampleSocket.onmessage = function (event) {
-        console.log("recieved")
+        console.log("recieved");
         $scope.chats.push(JSON.parse(event.data));
         $scope.$apply();
-    }
+    };
 
-    $scope.sendMessage = function(message){
-        console.log("sent message" + message)
-        exampleSocket.send(JSON.stringify({"name": $rootScope.settings.username, "msg": message}));
-    }
+    $scope.sendMessage = function(){
+        exampleSocket.send(JSON.stringify({"name": $rootScope.settings.username, "msg": $scope.message, "time": new Date()}));
+        $scope.message = "";
+    };
 })
 
 
