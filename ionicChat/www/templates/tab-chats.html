@@ -1,23 +1,18 @@
 <ion-view view-title="Chats">
   <ion-content>
     <ion-list>
-      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="chat in chats" type="item-text-wrap">
+      <ion-item ng-repeat="chat in chats">
         <h2>({{chat.time | date: 'mediumTime' }}) {{chat.name}}</h2>
         <p>{{chat.msg}}</p>
-
-
-        <ion-option-button class="button-assertive" ng-click="remove(chat)">
-          Delete
-        </ion-option-button>
       </ion-item>
     </ion-list>
   </ion-content>
   <ion-footer-bar>
       <div class="bar bar-footer">
-          <label class="item item-input" style="width:75%">
-              <input type="text" placeholder="Enter your message" ng-model="message">
+          <label class="item item-input" style="width:75%" focus-me>
+              <input type="text" placeholder="Enter your message" ng-model="message" ng-enter="sendMessage()" ng-focus="true"/>
           </label>
-          <button class="button button-positive" style="width: 25%" ng-click="sendMessage()">Send</button>
+          <button class="button button-positive" style="width: 25%; display: inline" ng-click="sendMessage()" type="submit">Send</button>
       </div>
   </ion-footer-bar>
 </ion-view>
