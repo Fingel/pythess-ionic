@@ -1,7 +1,7 @@
 <ion-view view-title="Chats">
   <ion-content>
     <ion-list>
-      <ion-item ng-repeat="chat in chats">
+      <ion-item ng-repeat="chat in chats track by chat.time">
         <h2>({{chat.time | date: 'mediumTime' }}) {{chat.name}}</h2>
         <p>{{chat.msg}}</p>
       </ion-item>
