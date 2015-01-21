@@ -9,6 +9,7 @@ angular.module('starter.controllers', [])
 
         console.log("socket open");
         $scope.chats.push({"name": "---connected---", "msg": "", "time": new Date()});
+        $scope.$apply();
     };
     exampleSocket.onmessage = function (event) {
         console.log("recieved");
