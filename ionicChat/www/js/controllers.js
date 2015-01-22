@@ -41,4 +41,8 @@ angular.module('starter.controllers', [])
     $scope.$watch('settings.username', function(){
         $window.localStorage.settings = JSON.stringify($scope.settings);
     });
+
+    $scope.clearLogs = function(){
+        $window.localStorage.chats = JSON.stringify([]);
+    };
 });
