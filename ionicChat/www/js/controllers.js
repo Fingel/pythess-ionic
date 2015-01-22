@@ -1,7 +1,7 @@
 angular.module('starter.controllers', [])
 
 
-.controller('ChatsCtrl', function($scope, $ionicScrollDelegate, $window) {
+.controller('ChatsCtrl', function($scope, $ionicScrollDelegate, $window, MediaSrv) {
     $scope.chats = [];
     if($window.localStorage.chats){
         lchats = JSON.parse($window.localStorage.chats);
@@ -20,6 +20,9 @@ angular.module('starter.controllers', [])
         $scope.chats.push(JSON.parse(event.data));
         $window.localStorage.chats = JSON.stringify($scope.chats);
         $scope.$apply();
+        MediaSrv.loadMedia('media/notification.wav').then(function(media){
+            media.play();
+        });
     };
 
     $scope.sendMessage = function(){
