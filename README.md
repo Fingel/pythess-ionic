@@ -36,3 +36,24 @@ Now run the application (make sure your phone is plugged in)
 Our application is installed and running. Mobile development isn't that hard, is it?
 
 iOS users can add the ios platform using `ionic platform add ios` however it is still necassary to use Xcode to build the application. Sorry :(
+
+# Pythess Chat demo
+In the ionicChat directory there is a demo Ionic chat app. It uses websockets to pass messages using the server.py program.
+
+To test it out, you can just visit: [http://toxiccode.com/pythesschat/#/tab/chats](http://toxiccode.com/pythesschat/#/tab/chats)
+
+Or, cd to in the directory and run the development server:
+
+    ionic serve
+
+If you want to run it on your phone, first add your platform:
+
+    ionic add platform android
+
+Then add the media plugin (for chat sounds):
+
+    ionic plugin add org.apache.cordova.media
+
+Now you are ready to build and deploy the app:
+
+    ionic run android --device
